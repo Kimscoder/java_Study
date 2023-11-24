@@ -15,22 +15,40 @@ public class Quiz3 {
 		int count =0;
 		int money =0;
 		int odd =0;
-		int[] alpha = new int[6];
+		int Num =0;
+		int[][] alpha;
+		
 		
 		System.out.print("금액을 입력 : ");
 		money = scann.nextInt();
 		
 		count = money/1000;
 		odd = money%1000;
+		alpha = new int[count][6];
 		
+		//로또 뽑기
 		for(int i =0; i<count; i++) {
 			for(int j =0; j<6; j++) {
-				alpha[j] = (int)(Math.random()*45+1);
-				System.out.print(alpha[j]+" ");
+				Num = (int)(Math.random()*45+1);
+				alpha[i][j] = Num;
+				System.out.print(alpha[i][j]+" ");
+				for(int k=0; k<6; k++) {
+					if((alpha[i][j] == alpha[i][k])&&j>0) {
+						j--;
+						break;
+					}
+				}
+				
+			}
+			
+		}
+		//출력
+		for(int i =0; i<count; i++) {
+			for(int j =0; j<6; j++) {
+				System.out.print(alpha[i][j]+" ");
 			}
 			System.out.println();
 		}
-		System.out.println();
 		System.out.println("거스름 돈 : "+odd);
 	}
 
