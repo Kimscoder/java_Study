@@ -24,6 +24,11 @@ public class ScoreMG {
 		
 		//출력
 //		new ScoreVO().printLabel(); instance를 선언해줘야만 실행가능
+		System.out.print("순번\t");
 		ScoreVO.printLabel();
+		for(int i =0; i<STUDEN_NUM;i++) {
+			System.out.print((i+1)+"\t");
+			scores[i].printScore();
+		}
 	}
 }

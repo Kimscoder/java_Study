@@ -41,7 +41,7 @@ public class ScoreVO {
     }
     //static을 붙여서 Class member
     public static void printLabel() {
-    	System.out.println("순번\t이름\t국어\t영어\t수학\t과학\t총점\t평균");
+    	System.out.println("이름\t국어\t영어\t수학\t과학\t총점\t평균");
     }
     public void printScore() {
     	System.out.println(name+"\t"+kor+"\t"+eng+"\t"+math+"\t"+scien+"\t"+total()
