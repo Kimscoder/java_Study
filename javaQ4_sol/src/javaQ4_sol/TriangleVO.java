@@ -27,6 +27,9 @@ public class TriangleVO {
 	public int surface() {
 		return (int)(height*baseLine*0.5f);
 	}
+	public static int surface(int height, int baseLine) {
+		return (int)(height*baseLine*0.5f);
+	}
 //	{
 //		height = 1;
 //		baseLine =1;
