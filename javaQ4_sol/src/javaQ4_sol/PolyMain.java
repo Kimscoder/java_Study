@@ -11,11 +11,13 @@ public class PolyMain {
 	
 	public static void main(String[] args) {
 		PolyMain main =new PolyMain();
-		main.input();
-		
-		main.process();
-		
-		main.output();
+		do {
+			main.input();
+			
+			main.process();
+			
+			main.output();
+		}while(true);
 	}
 	
 	private void input() {
@@ -71,6 +73,11 @@ public class PolyMain {
 			System.out.println("원의 넓이 : "+circle.surface());
 			break;
 		default:;
+		}
+		System.out.println("종료(Q) 혹은 계속하시려면 아무키나 누르세요.");
+		String menu = new Scanner(System.in).nextLine();//익명인스턴스 한번 쓰고 버리는 용도
+		if(menu.toUpperCase().equals("Q")) {
+			System.exit(0);//stack을 날려버림
 		}
 	}
 }
