@@ -3,16 +3,32 @@ package com.java.dto;
 import java.util.Scanner;
 
 //package가 다르면 앞에 설정을 해줘야함
-public class ScoreVO {
+public class ScoreVO implements Comparable<ScoreVO>{
 	//class Field에 있는 변수들은 알아서 초기화됨
 	//instance member - static X
-    public String name;
-    public int math;
-    public int kor;
-    public int eng;
-    public int scien;
+    private String name;
+    private int math;
+    private int kor;
+    private int eng;
+    private int scien;
     
-    public int total() {
+    
+    public String getName() {
+		return name;
+	}
+	public int getMath() {
+		return math;
+	}
+	public int getKor() {
+		return kor;
+	}
+	public int getEng() {
+		return eng;
+	}
+	public int getScien() {
+		return scien;
+	}
+	public int total() {
     	return kor+eng+math+scien;
     }
     public float evg() {
@@ -47,4 +63,12 @@ public class ScoreVO {
     	System.out.println(name+"\t"+kor+"\t"+eng+"\t"+math+"\t"+scien+"\t"+total()
 							+"\t"+evg());
     }
+
+	public int compareTo(Object o) {
+		if( !(o instanceof ScoreVO)) return -1;
+		
+		ScoreVO other = (ScoreVO)o;
+		return this.name.compareTo(other.getName());
+	}
+	//String은 Comparable하기 때문에 비교할때는 따로 식을 설정안해도 댐
 }
